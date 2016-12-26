@@ -1,7 +1,7 @@
-from .base import BaseHandler
+from handlers.base_handler import BaseHandler
 
 
-class NewPost(BaseHandler):
+class NewPostHandler(BaseHandler):
     def get(self):
         self.render('new_post.html')
 

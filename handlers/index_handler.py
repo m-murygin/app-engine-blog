@@ -1,4 +1,4 @@
-from handlers.base import BaseHandler
+from handlers.base_handler import BaseHandler
 
 
 class IndexHandler(BaseHandler):
