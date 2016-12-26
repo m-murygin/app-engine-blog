@@ -1,0 +1,22 @@
+.block-submit {
+    width: 100px;
+    float: right;
+}
+
+.form-new-post {
+    margin-top: 10px;
+}
+
+.form-new-post .control-label {
+    font-size: 1.3em;
+}
+
+.form-sign-up {
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .form-sign-up {
+        margin-top: 20px;
+    }
+}
