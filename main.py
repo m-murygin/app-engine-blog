@@ -6,7 +6,7 @@ from handlers.post_handler import PostHandler
 
 
 app = webapp2.WSGIApplication([
-    ('/', IndexHandler),
-    ('/newpost', NewPostHandler),
-    ('/post/(\d+)', PostHandler),
+    (r'/', IndexHandler),
+    (r'/newpost', NewPostHandler),
+    (r'/(\d+)', PostHandler),
 ], debug=True)
