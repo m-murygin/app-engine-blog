@@ -3,9 +3,9 @@
 {% set currentTab = 'new-post-tab' %}
 
 {% block content %}
-  <link rel="stylesheet" type="text/css" href="css/new_post.css">
+  <link rel="stylesheet" type="text/css" href="css/forms.css">
 
-  <form method="post" class="form-new-post">
+  <form method="post" class="top-form">
     <div class="form-group {% if error and not subject %}has-error{% endif %}" >
       <label class="control-label" for="subject-input">Subject</label>
       <input type="text" name="subject" value="{{subject}}" class="form-control" id="subject-input">

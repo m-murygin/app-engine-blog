@@ -33,7 +33,15 @@
             <ul class="nav navbar-nav">
               <li id="home-tab"><a href="/">Home</a></li>
               <li id="new-post-tab" ><a href="/newpost">New Post</a></li>
-              <li id="contant-tab"><a href="#">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              {% if user %}
+                <li><a href="#"><span class="glyphicon glyphicon-user"> {{user.username}}</span></a></li>
+                <li id="home-tab"><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              {% else %}
+                <li id="sign-up-tab"><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li id="login-tab"><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              {% endif %}
             </ul>
           </div>
         </div>

@@ -3,7 +3,7 @@
     float: right;
 }
 
-.form-new-post {
+.top-form {
     margin-top: 10px;
 }
 
@@ -11,12 +11,8 @@
     font-size: 1.3em;
 }
 
-.form-sign-up {
-    margin-top: 100px;
-}
-
 @media (max-width: 768px) {
-    .form-sign-up {
-        margin-top: 20px;
+    .top-form {
+        margin-top: 0px;
     }
 }

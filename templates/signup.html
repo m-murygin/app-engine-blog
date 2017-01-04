@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% set currentTab = 'sign-up-tab' %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="css/forms.css">
+
+  <form method="post" class="form-horizontal top-form">
+
+    <div class="form-group {% if name_error %}has-error{% endif %}" >
+      <label class="control-label col-sm-3 col-lg-2" for="username-input">User Name</label>
+      <div class="col-sm-9 col-lg-10 contol-input">
+        <input type="text" name="username" value="{{username}}" class="form-control" id="username-input" aria-describedby="username-error-help">
+        {% if name_error %}
+        <span id="username-error-help" class="help-block">{{name_error}}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="form-group {% if pass_error %}has-error{% endif %}">
+      <label class="control-label col-sm-3 col-lg-2" for="password-input">Password</label>
+      <div class="col-sm-9 col-lg-10 contol-input">
+        <input type="password" name="password" class="form-control" id="password-input">
+        {% if pass_error %}
+        <span id="username-error-help" class="help-block">{{pass_error}}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="form-group {% if verify_error %}has-error{% endif %}">
+      <label class="control-label col-sm-3 col-lg-2" for="verify-input">Verify Password</label>
+      <div class="col-sm-9 col-lg-10 contol-input">
+        <input type="password" name="verify" class="form-control" id="verify-input">
+        {% if verify_error %}
+        <span id="username-error-help" class="help-block">{{verify_error}}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="form-group {% if email_error %}has-error{% endif %}">
+      <label class="control-label col-sm-3 col-lg-2" for="email-input">Email</label>
+      <div class="col-sm-9 col-lg-10 contol-input">
+        <input type="email" name="email" value="{{email}}" class="form-control" id="email-input">
+        {% if email_error %}
+        <span id="username-error-help" class="help-block">{{email_error}}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <input class="btn btn-primary block-submit" type="submit" value="Sign Up">
+  </form>
+
+{% endblock %}
