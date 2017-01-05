@@ -2,9 +2,11 @@
 
 {% set currentTab = 'sign-up-tab' %}
 
-{% block content %}
+{% block css %}
   <link rel="stylesheet" type="text/css" href="css/forms.css">
+{% endblock %}
 
+{% block content %}
   <form method="post" class="form-horizontal top-form">
 
     <div class="form-group {% if name_error %}has-error{% endif %}" >

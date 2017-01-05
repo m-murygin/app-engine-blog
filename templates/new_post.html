@@ -2,8 +2,11 @@
 
 {% set currentTab = 'new-post-tab' %}
 
-{% block content %}
+{% block css %}
   <link rel="stylesheet" type="text/css" href="css/forms.css">
+{% endblock %}
+
+{% block content %}
 
   <form method="post" class="top-form">
     <div class="form-group {% if error and not subject %}has-error{% endif %}" >
