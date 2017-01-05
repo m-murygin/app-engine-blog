@@ -1,6 +1,6 @@
 from handlers.base_handler import BaseHandler
 from modules.verificator import Verificator
-from modules.auth import create_user, generate_auth_token, USER_COOKIE
+from modules.auth import create_user
 
 
 class SignUpHandler(BaseHandler):
@@ -38,6 +38,5 @@ class SignUpHandler(BaseHandler):
             self.render('signup.html', **params)
         else:
             user_id = create_user(username, password, email)
-            secure_id = generate_auth_token(user_id)
-            self.response.set_cookie(USER_COOKIE, secure_id)
+            self.save_auth_cookie(user_id)
             self.redirect('/welcome')

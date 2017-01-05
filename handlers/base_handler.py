@@ -3,7 +3,7 @@ import webapp2
 import jinja2
 import logging
 
-from modules.auth import USER_COOKIE, get_user_from_token
+from modules.auth import USER_COOKIE, get_user_from_token, generate_auth_token
 
 template_dir = os.path.join(os.path.dirname(__file__), '..', 'templates')
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
@@ -31,6 +31,10 @@ class BaseHandler(webapp2.RequestHandler):
             self.response.set_status(exception.code)
         else:
             self.response.set_status(500)
+
+    def save_auth_cookie(self, user_id):
+        secure_id = generate_auth_token(user_id)
+        self.response.set_cookie(USER_COOKIE, secure_id)
 
 
 def render_str(template, **params):
