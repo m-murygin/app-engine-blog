@@ -6,6 +6,7 @@ from handlers.post_handler import PostHandler
 from handlers.signup_handler import SignUpHandler
 from handlers.welcome_haldler import WelcomeHandler
 from handlers.signin_handler import SignInHandler
+from handlers.logout_handler import LogoutHandler
 
 app = webapp2.WSGIApplication([
     (r'/', IndexHandler),
@@ -14,4 +15,5 @@ app = webapp2.WSGIApplication([
     (r'/signup', SignUpHandler),
     (r'/login', SignInHandler),
     (r'/welcome', WelcomeHandler),
+    (r'/logout', LogoutHandler),
 ], debug=True)
