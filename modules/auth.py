@@ -11,7 +11,7 @@ USER_COOKIE = 'auth'
 
 def check_password(password, pass_token):
     sault = pass_token.split('|')[1]
-    return generate_password_token(password, sault) == pass_token
+    return generate_password_token(str(password), sault) == pass_token
 
 
 def create_user(username, password, email):
@@ -24,7 +24,7 @@ def create_user(username, password, email):
 
 
 def generate_password_token(password, sault):
-    hashed_pass = hmac.new(sault, password).hexdigest()
+    hashed_pass = hmac.new(str(sault), str(password)).hexdigest()
     return '%s|%s' % (hashed_pass, sault)
 
 

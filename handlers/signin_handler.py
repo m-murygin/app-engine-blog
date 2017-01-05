@@ -25,6 +25,7 @@ class SignInHandler(BaseHandler):
         user = users[0]
 
         if check_password(password, user.password):
+            self.save_auth_cookie(user.key().id())
             self.redirect('/')
         else:
             self.response.set_status(401)
