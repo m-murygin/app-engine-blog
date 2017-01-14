@@ -2,6 +2,8 @@ import os
 import webapp2
 import jinja2
 import logging
+import json
+
 
 from modules.auth import USER_COOKIE, get_user_from_token, generate_auth_token
 
@@ -17,6 +19,10 @@ class BaseHandler(webapp2.RequestHandler):
             kw['user'] = get_user_from_token(auth_token)
 
         self.response.out.write(render_str(template, **kw))
+
+    def send_json(self, obj):
+        self.response.headers['Content-Type'] = 'application/json'
+        self.response.out.write(json.dumps(obj))
 
     def handle_exception(self, exception, debug):
         # Log the error.
