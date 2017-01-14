@@ -8,6 +8,7 @@ from handlers.welcome_haldler import WelcomeHandler
 from handlers.signin_handler import SignInHandler
 from handlers.logout_handler import LogoutHandler
 from handlers.blog_api import BlogApi
+from handlers.post_api import PostApi
 
 
 app = webapp2.WSGIApplication([
@@ -15,6 +16,7 @@ app = webapp2.WSGIApplication([
     (r'^/.json$', BlogApi),
     (r'^/newpost/?$', NewPostHandler),
     (r'^/(\d+)/?$', PostHandler),
+    (r'^/(\d+).json/?$', PostApi),
     (r'^/signup/?$', SignUpHandler),
     (r'^/login/?$', SignInHandler),
     (r'^/welcome/?$', WelcomeHandler),
